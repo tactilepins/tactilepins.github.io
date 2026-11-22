@@ -70,13 +70,13 @@
     background: linear-gradient(160deg, #3a3d47, #15161b 40%, #2b2d35);
     box-shadow: 0 40px 90px rgba(0, 0, 0, .6), 0 0 0 1px #000;
   }
-  .phone video { display: block; width: 100%; aspect-ratio: 3 / 4; border-radius: 19px; background: #000; }
+  .phone video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; border-radius: 19px; background: #000; }
   .caption {
     text-align: center; min-height: 3.2em; margin: 18px auto 0; max-width: 440px;
     color: var(--muted); font-size: 16px;
   }
   .caption b { color: var(--text); font-weight: 600; }
-  .note { text-align: center; color: var(--muted); font-size: 13px; margin: 6px 0 0; opacity: .8; }
+  .note { text-align: center; color: var(--muted); font-size: 14px; margin: 16px auto 0; max-width: 440px; }
 
   section { padding: 64px 0; border-top: 1px solid var(--line); }
   h2 { font-size: clamp(28px, 3.6vw, 38px); letter-spacing: -.02em; line-height: 1.15; margin: 0 0 12px; }
@@ -139,12 +139,11 @@
       </div>
       <div>
         <div class="phone">
-          <video id="promo" src="media/tactile-pins.mp4?v=3" poster="media/poster.jpg"
-                 muted loop playsinline autoplay controls preload="metadata"
-                 aria-describedby="caption"></video>
+          <video id="promo" src="media/tactile-pins.mp4?v=4" poster="media/poster.jpg"
+                 controls playsinline preload="none" width="900" height="1200"
+                 aria-label="A 56-second Tactile Pins trailer with music: the words Tactile Pins are pressed into a bed of pins and painted in rainbow colours; a city skyline is drawn, flipped round, given lit windows and a yellow moon, and turned in 3D; then a waving person, a house and a sun are drawn and coloured in."></video>
         </div>
-        <p class="caption" id="caption" aria-live="off"><b>Draw.</b> Push the pins in from the back with a fingertip. They stay where you leave them.</p>
-        <p class="note">Drawn on a 13-inch iPad. The drawing is sped up.</p>
+        <p class="note">Every picture is drawn by the app itself, on a 13-inch iPad, sped up. The music is our own.</p>
       </div>
     </div>
 
@@ -200,31 +199,6 @@
   </footer>
 </div>
 
-<script>
-  // The captions under the video follow what is on screen.
-  (function () {
-    var video = document.getElementById('promo');
-    var caption = document.getElementById('caption');
-    var parts = [
-      [0,    '<b>Draw.</b> Push the pins in from the back with a fingertip. They stay where you leave them.'],
-      [9.0,  '<b>Flip.</b> Turn the toy round and the drawing stands out of the pins.'],
-      [14.8, '<b>Paint.</b> Colour the pins one at a time: lights in the windows, a yellow moon.'],
-      [19.6, '<b>Tumble.</b> It is a whole 3D toy. Turn it and look at it from any side.'],
-      [24.4, '<b>Anything you like.</b> A person, a house, the sun.'],
-      [31.8, '<b>Flip</b> it round again\u2026'],
-      [37.6, '<b>\u2026and colour it in.</b>']
-    ];
-    var shown = -1;
-    video.addEventListener('timeupdate', function () {
-      var i = 0;
-      while (i + 1 < parts.length && video.currentTime >= parts[i + 1][0]) i++;
-      if (i !== shown) { shown = i; caption.innerHTML = parts[i][1]; }
-    });
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      video.removeAttribute('autoplay');
-      video.pause();
-    }
-  })();
-</script>
+
 </body>
 </html>
