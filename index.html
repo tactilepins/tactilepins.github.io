@@ -65,17 +65,18 @@
   }
 
   .phone {
-    justify-self: center; width: min(340px, 100%);
-    border-radius: 46px; padding: 10px;
+    justify-self: center; width: min(460px, 100%); margin: 0 auto;
+    border-radius: 30px; padding: 12px;
     background: linear-gradient(160deg, #3a3d47, #15161b 40%, #2b2d35);
     box-shadow: 0 40px 90px rgba(0, 0, 0, .6), 0 0 0 1px #000;
   }
-  .phone video { display: block; width: 100%; aspect-ratio: 720 / 1566; border-radius: 37px; background: #000; }
+  .phone video { display: block; width: 100%; aspect-ratio: 3 / 4; border-radius: 19px; background: #000; }
   .caption {
-    text-align: center; min-height: 3.2em; margin: 18px auto 0; max-width: 340px;
+    text-align: center; min-height: 3.2em; margin: 18px auto 0; max-width: 440px;
     color: var(--muted); font-size: 16px;
   }
   .caption b { color: var(--text); font-weight: 600; }
+  .note { text-align: center; color: var(--muted); font-size: 13px; margin: 6px 0 0; opacity: .8; }
 
   section { padding: 64px 0; border-top: 1px solid var(--line); }
   h2 { font-size: clamp(28px, 3.6vw, 38px); letter-spacing: -.02em; line-height: 1.15; margin: 0 0 12px; }
@@ -88,7 +89,7 @@
   .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px;
          background: radial-gradient(circle at 35% 30%, #fff, var(--gold) 55%, #6b5a2c); }
 
-  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .shots figure { margin: 0; }
   .shots img { display: block; width: 100%; height: auto; border-radius: 22px; border: 1px solid var(--line); }
   .shots figcaption { color: var(--muted); font-size: 14.5px; text-align: center; margin-top: 10px; }
@@ -108,11 +109,11 @@
   @media (max-width: 860px) {
     .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 12px; }
     .features { grid-template-columns: 1fr 1fr; }
-    .shots { grid-template-columns: 1fr 1fr; }
     .private { grid-template-columns: 1fr; gap: 8px; }
   }
   @media (max-width: 540px) {
     .features { grid-template-columns: 1fr; }
+    .shots { grid-template-columns: 1fr; }
     section { padding: 48px 0; }
   }
 </style>
@@ -138,11 +139,12 @@
       </div>
       <div>
         <div class="phone">
-          <video id="promo" src="media/tactile-pins.mp4?v=2" poster="media/poster.jpg"
+          <video id="promo" src="media/tactile-pins.mp4?v=3" poster="media/poster.jpg"
                  muted loop playsinline autoplay controls preload="metadata"
                  aria-describedby="caption"></video>
         </div>
-        <p class="caption" id="caption" aria-live="off"><b>Press.</b> Push the pins from the back, then flip the toy round to see what you made.</p>
+        <p class="caption" id="caption" aria-live="off"><b>Draw.</b> Push the pins in from the back with a fingertip. They stay where you leave them.</p>
+        <p class="note">Drawn on a 13-inch iPad. The drawing is sped up.</p>
       </div>
     </div>
 
@@ -163,10 +165,9 @@
       <h2>Make it yours</h2>
       <p class="sub">Metal, plastic or rainbow pins, in front of a plain studio, six moving scenes, or a photo of your own.</p>
       <div class="shots">
-        <figure><img src="media/shot-press.jpg" width="600" height="1304" loading="lazy" alt="A spiral pressed into silver pins in front of a sunset"><figcaption>Silver at sunset</figcaption></figure>
-        <figure><img src="media/shot-stamp.jpg" width="600" height="1304" loading="lazy" alt="A heart stamped into gold pins in front of an aurora"><figcaption>Gold under the aurora</figcaption></figure>
-        <figure><img src="media/shot-paint.jpg" width="600" height="1304" loading="lazy" alt="A ball painted yellow and a ring painted blue on silver pins"><figcaption>Painted pins</figcaption></figure>
-        <figure><img src="media/shot-rainbow.jpg" width="600" height="1304" loading="lazy" alt="Rainbow pins holding a ball and a ring, in front of disco lights"><figcaption>Rainbow at the disco</figcaption></figure>
+        <figure><img src="media/shot-city.jpg" width="720" height="960" loading="lazy" alt="A city skyline standing out of graphite pins, with yellow painted windows and a yellow moon"><figcaption>A skyline, with the lights on</figcaption></figure>
+        <figure><img src="media/shot-city-turned.jpg" width="720" height="960" loading="lazy" alt="The same toy turned nearly edge-on, showing how far each pin has been pushed"><figcaption>Turned to see the depth</figcaption></figure>
+        <figure><img src="media/shot-person.jpg" width="720" height="960" loading="lazy" alt="A waving person, a house and a sun pressed into silver pins and painted in colour"><figcaption>Pressed, then painted</figcaption></figure>
       </div>
       <ul class="finishes" style="margin-top:32px" aria-label="Finishes">
         <li><i style="background:#c9ccd3"></i>Silver</li>
@@ -205,10 +206,13 @@
     var video = document.getElementById('promo');
     var caption = document.getElementById('caption');
     var parts = [
-      [0,    '<b>Press.</b> Push the pins from the back, then flip the toy round to see what you made.'],
-      [9.8,  '<b>Stamp.</b> Press and hold to push a heart, a star or a tortoise into the pins.'],
-      [16.6, '<b>Paint.</b> Colour the pins, one at a time or a patch at once.'],
-      [26.8, '<b>Tumble.</b> Turn it any way round, in silver, gold or rainbow.']
+      [0,    '<b>Draw.</b> Push the pins in from the back with a fingertip. They stay where you leave them.'],
+      [9.0,  '<b>Flip.</b> Turn the toy round and the drawing stands out of the pins.'],
+      [14.8, '<b>Paint.</b> Colour the pins one at a time: lights in the windows, a yellow moon.'],
+      [19.6, '<b>Tumble.</b> It is a whole 3D toy. Turn it and look at it from any side.'],
+      [24.4, '<b>Anything you like.</b> A person, a house, the sun.'],
+      [31.8, '<b>Flip</b> it round again\u2026'],
+      [37.6, '<b>\u2026and colour it in.</b>']
     ];
     var shown = -1;
     video.addEventListener('timeupdate', function () {
