@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tactile Pins: a 3D pin art toy for iPhone, iPad and Mac</title>
-<meta name="description" content="A bed of thousands of sliding pins that keeps the shape of whatever is pressed into it. Press, stamp, paint, scan real objects and tumble a realistic 3D pin art toy on iPhone, iPad and Mac. No ads, no accounts, no tracking.">
+<title>Tactile Pins: a 3D pin art toy for iPhone, iPad, Mac and Android</title>
+<meta name="description" content="A bed of thousands of sliding pins that keeps the shape — and colors — of whatever is pressed into it. Press, stamp, paint, capture real objects in color, share offline by QR code, and export STL files to 3D print. Free to try, then 99¢ once for the whole app. For iPhone, iPad, and Mac, with Android coming soon. No ads, no accounts, no tracking.">
 <meta property="og:title" content="Tactile Pins">
-<meta property="og:description" content="A realistic 3D pin art toy for iPhone, iPad and Mac.">
+<meta property="og:description" content="A realistic 3D pin art toy: press, stamp, paint, capture real objects in color, and export creations as STL files to 3D print. Free to try, then 99¢ once.">
 <meta property="og:url" content="https://tactilepins.github.io/">
 <meta property="og:image" content="https://tactilepins.github.io/media/icon-512.png">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#11141e">
 <link rel="icon" type="image/png" href="media/icon-180.png">
 <link rel="apple-touch-icon" href="media/icon-180.png">
-<link rel="stylesheet" href="style.css?v=6">
-<script src="pinboard.js?v=4" defer></script>
+<link rel="stylesheet" href="style.css?v=9">
+<script src="pinboard.js?v=6" defer></script>
 </head>
 <body>
 
@@ -24,7 +24,7 @@
     <nav aria-label="Primary">
       <a class="wide" href="#play">Try it</a>
       <a class="wide" href="#toy">The toy</a>
-      <a class="wide" href="#camera">Camera</a>
+      <a class="wide" href="#color-print">Color &amp; 3D print</a>
       <a class="wide" href="#finishes">Finishes</a>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy</a>
@@ -35,9 +35,12 @@
 <section class="hero">
   <div class="wrap">
     <div>
-      <img class="hero-icon" src="media/icon-512.png" alt="Tactile Pins app icon: a domed shape pressed into a honeycomb grid of silver pins" width="84" height="84">
+      <div class="hero-top">
+        <img class="hero-icon" src="media/icon-512.png" alt="Tactile Pins app icon: a domed shape pressed into a honeycomb grid of silver pins" width="84" height="84">
+        <a class="price-pill" href="#deal"><strong>Free to try</strong> · 99¢ once for the whole app</a>
+      </div>
       <h1>Thousands of pins.<br><em>Press anything</em> into them.</h1>
-      <p class="lede">A realistic 3D pin art toy for iPhone, iPad and Mac: a bed of sliding pins that keeps the shape of whatever is pushed into it. A finger, a whole hand, a stamp, or a real object or face held up to the camera. Every pin stops at its own depth, so what you make is genuinely 3D.</p>
+      <p class="lede">A realistic 3D pin art toy: a bed of sliding pins that keeps the shape — and even the colors — of whatever is pushed into it. A finger, a whole hand, a stamp, or a real object or face held up to the camera. Save it, share it offline by QR code, or export an STL to 3D print it for real.</p>
       <div class="cta">
         <span class="badge" aria-label="Coming soon to the App Store for iPhone and iPad">
           <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
@@ -47,11 +50,15 @@
           <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
           <span><small>Coming soon to the</small>Mac App Store</span>
         </span>
-        <span class="note">For iPhone, iPad and Mac · Free to play, with one purchase for the full set</span>
+        <span class="badge" aria-label="Coming soon to Google Play for Android">
+          <svg width="20" height="22" viewBox="0 0 20 22" aria-hidden="true"><path fill="#34a853" d="M1 .6 11.3 11 1 21.4c-.4-.2-.6-.6-.6-1.1V1.7C.4 1.2.6.8 1 .6z"/><path fill="#fbbc04" d="m14.7 7.6 3.6 2.1c1 .6 1 2 0 2.6l-3.6 2.1-3.4-3.4z"/><path fill="#4285f4" d="M11.3 11 14.7 14.4 2.5 21.4c-.5.3-1 .3-1.5 0z"/><path fill="#ea4335" d="M1 .6c.5-.3 1-.3 1.5 0l12.2 7-3.4 3.4z"/></svg>
+          <span><small>Coming soon to</small>Google Play</span>
+        </span>
+        <span class="note">For iPhone, iPad, and Mac — Android coming soon · Free to try, then 99¢ once for the full set (no subscriptions)</span>
       </div>
       <p class="watch">
         <a href="#play">&#9654;&nbsp;Try the mini pinboard</a>
-        <a class="secondary" href="#toy">Explore the features</a>
+        <a class="secondary" href="#color-print">Color capture &amp; 3D printing</a>
       </p>
     </div>
 
@@ -59,9 +66,9 @@
       <div class="device">
         <video id="promo" src="media/tactile-pins.mp4?v=5" poster="media/poster.jpg"
                controls playsinline preload="none" width="900" height="1200"
-               aria-label="A 68-second Tactile Pins trailer with music: the words Tactile Pins are pressed into a bed of pins and painted in rainbow colours; a head comes up to the camera and the pins rise into a face, which turns from side to side and is then seen in profile; a teddy bear is scanned in the same way; a city skyline is drawn, flipped round and given lit windows and a yellow moon; and a waving person, a house and a sun are drawn and coloured in."></video>
+               aria-label="A 68-second Tactile Pins trailer with music: the words Tactile Pins are pressed into a bed of pins and painted in rainbow colors; a head comes up to the camera and the pins rise into a face, which turns from side to side and is then seen in profile; a teddy bear is scanned in the same way; a city skyline is drawn, flipped around and given lit windows and a yellow moon; and a waving person, a house and a sun are drawn and colored in."></video>
       </div>
-      <p class="trailer-note">Every picture is rendered by the app itself on a 13-inch iPad simulator (drawing sped up; a modelled head and bear stand in for a camera). Original music.</p>
+      <p class="trailer-note">Every picture is rendered by the app itself on a 13-inch iPad simulator (drawing sped up; a modeled head and bear stand in for a camera). Original music.</p>
     </div>
   </div>
 </section>
@@ -71,7 +78,7 @@
     <div class="playground-head">
       <p class="kicker">Try it right here</p>
       <h2 id="play-title">Go ahead, press something.</h2>
-      <p>Drag across the board to push pins up, hold longer to push deeper, stamp a 3D relief, paint in colour, or tilt the angle to inspect the depth.</p>
+      <p>Drag across the board to push pins up, hold longer to push deeper, stamp a 3D relief, paint in any color, or tilt the angle to inspect the depth.</p>
     </div>
 
     <div class="toy-shell">
@@ -94,7 +101,7 @@
               <button type="button" class="pill-btn" data-pin-tool="paint" aria-pressed="false">Paint</button>
               <button type="button" class="pill-btn" data-pin-tool="erase" aria-pressed="false">Flatten</button>
             </div>
-            <div id="paint-palette" class="paint-row" role="group" aria-label="Paint colours">
+            <div id="paint-palette" class="paint-row" role="group" aria-label="Paint colors">
               <button type="button" class="swatch is-active" data-paint-color="rainbow" title="Rainbow brush" aria-label="Rainbow brush" style="background:conic-gradient(#f44,#fc3,#4d6,#3cf,#a5f,#f44)"></button>
               <button type="button" class="swatch" data-paint-color="red" title="Coral red" aria-label="Coral red" style="background:#ee4c42"></button>
               <button type="button" class="swatch" data-paint-color="orange" title="Amber" aria-label="Amber" style="background:#fa922c"></button>
@@ -103,6 +110,9 @@
               <button type="button" class="swatch" data-paint-color="blue" title="Blue" aria-label="Blue" style="background:#3a94ff"></button>
               <button type="button" class="swatch" data-paint-color="purple" title="Violet" aria-label="Violet" style="background:#a460f5"></button>
               <button type="button" class="swatch" data-paint-color="pink" title="Pink" aria-label="Pink" style="background:#f562ae"></button>
+              <label class="swatch swatch-custom" data-paint-color="custom" title="Pick any paint color">
+                <input id="custom-paint-input" type="color" value="#2eccb0" aria-label="Pick any custom paint color">
+              </label>
             </div>
           </div>
 
@@ -137,6 +147,9 @@
               <button type="button" class="swatch" data-pin-finish="plastic" title="Plastic blue" aria-label="Plastic blue pins" aria-pressed="false" style="background:#3d8bff"></button>
               <button type="button" class="swatch" data-pin-finish="rainbow" title="Rainbow" aria-label="Rainbow pins" aria-pressed="false" style="background:conic-gradient(#f44,#fc3,#4d6,#3cf,#a5f,#f44)"></button>
               <button type="button" class="swatch" data-pin-finish="confetti" title="Confetti" aria-label="Confetti pins" aria-pressed="false" style="background:radial-gradient(circle at 30% 30%,#ffd166 0 28%,transparent 30%),radial-gradient(circle at 72% 35%,#ef476f 0 26%,transparent 28%),radial-gradient(circle at 50% 72%,#06d6a0 0 28%,#118ab2 30%)"></button>
+              <label class="swatch swatch-custom" data-pin-finish="custom" title="Pick any pin color">
+                <input id="custom-finish-input" type="color" value="#33bfe5" aria-label="Pick any custom pin color">
+              </label>
             </div>
           </div>
 
@@ -169,7 +182,7 @@
       </div>
     </div>
 
-    <p class="playground-foot">A lightweight preview right in your browser — the native app simulates thousands of solid 3D pins in Metal with real shadows, acrylic glass, gravity physics, Apple Pencil, and live camera depth scanning.</p>
+    <p class="playground-foot">A lightweight preview right in your browser — the native app simulates thousands of solid 3D pins in Metal with real shadows, acrylic glass, gravity physics, Apple Pencil, color depth capture, and STL export for 3D printing.</p>
   </div>
 </section>
 
@@ -183,21 +196,21 @@
     </li>
     <li>
       <span class="pill-icon" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><line x1="8" y1="20" x2="16" y2="20"/><line x1="12" y1="16" x2="12" y2="20"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-2.5h6L17 8h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"/><circle cx="12" cy="13.5" r="3.5"/></svg>
       </span>
-      <strong>iPhone, iPad &amp; Mac</strong>Sculpt with one finger, a whole hand, mouse, trackpad, or an Apple Pencil.
+      <strong>Depth &amp; color capture</strong>Press a face, hand, or real object into the pins — even in full camera color — right on-device.
     </li>
     <li>
       <span class="pill-icon" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-2.5h6L17 8h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"/><circle cx="12" cy="13.5" r="3.5"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M3 7l9 5 9-5"/><path d="M12 22V12"/></svg>
       </span>
-      <strong>Camera depth</strong>Press a face, hand, or real object right into the pins using LiDAR or an on-device model.
+      <strong>3D print your creations</strong>Export any sculpture as a solid hexagonal-column STL file ready for your printer's slicer.
     </li>
     <li>
       <span class="pill-icon" aria-hidden="true">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
       </span>
-      <strong>No ads, no accounts</strong>Works completely offline. Camera frames and creations never leave your device.
+      <strong>No ads, no accounts</strong>Works completely offline on iPhone, iPad, Mac (and Android soon). Nothing leaves your device.
     </li>
   </ul>
 
@@ -205,36 +218,59 @@
     <div>
       <p class="kicker">Press, stamp &amp; paint</p>
       <h2>Sculpt from either side.</h2>
-      <p>The entire toy is modelled in 3D: the board, corner posts, clear acrylic front, and thousands of sliding pins. Start on the back pressing pin tips, or flip to the front glass to pull pins out and paint them.</p>
+      <p>The entire toy is modeled in 3D: the board, corner posts, clear acrylic front, and thousands of sliding pins. Start on the back pressing pin tips, or flip to the front glass to pull pins out and paint them.</p>
       <ul>
         <li><strong>Press:</strong> One finger, a whole hand, or an Apple Pencil. The longer you hold, the deeper the pins go. Switch between Wide and Thin for fine detail.</li>
-        <li><strong>Stamp:</strong> Solid sculpted shapes in three sizes — hearts, stars, animals, weather and more — each with a crisp outline and rounded 3D relief.</li>
-        <li><strong>Paint:</strong> Twelve colours from either side, pin by pin or with height-aware Fill that stops neatly at the edges of a raised shape.</li>
+        <li><strong>39 solid stamps:</strong> Hearts, stars, animals, weather, vehicles and more in three sizes — each leaving a crisp outline and rounded 3D relief.</li>
+        <li><strong>Paint in any color:</strong> 26 built-in colors plus a full color picker for any shade you want, pin by pin or with height-aware Fill that stays neatly inside raised shapes.</li>
         <li><strong>Magnet:</strong> Pull pins toward you to draw raised reliefs from the front, or rub sections flat from the back.</li>
       </ul>
     </div>
     <figure>
       <button type="button" class="shot-btn" aria-label="Zoom in: Pressed, then painted">
-        <img class="shot" src="media/shot-person.jpg" width="720" height="960" loading="lazy" alt="A waving person, a house and a sun pressed into silver pins and painted in colour">
+        <img class="shot" src="media/shot-person.jpg" width="720" height="960" loading="lazy" alt="A waving person, a house and a sun pressed into silver pins and painted in color">
         <span class="shot-cap">Pressed, then painted</span>
       </button>
       <button type="button" class="shot-btn" aria-label="Zoom in: Lettering in rainbow paint">
-        <img class="shot" src="media/shot-title.jpg" width="720" height="960" loading="lazy" alt="The words Tactile Pins standing out of silver pins, each letter painted a different colour">
+        <img class="shot" src="media/shot-title.jpg" width="720" height="960" loading="lazy" alt="The words Tactile Pins standing out of silver pins, each letter painted a different color">
         <span class="shot-cap">Lettering in rainbow paint</span>
       </button>
     </figure>
   </div>
 
-  <div class="feature flip" id="camera">
+  <div class="feature flip" id="color-print">
+    <div>
+      <p class="kicker">Color capture &amp; 3D printing</p>
+      <h2>Capture real color. Then 3D print it for real.</h2>
+      <p>Point the camera at something vivid and tap <strong>In color</strong>: every pushed pin takes both its exact 3D height and its real shade straight from the camera's picture. When you make something worth holding in your hand, turn it straight into a solid 3D print.</p>
+      <ul>
+        <li><strong>In color:</strong> With either camera, pick <em>Press in</em> for a classic monochrome relief or <em>In color</em> to paint every pressed pin from what the camera sees — all processed right on your device.</li>
+        <li><strong>Export to 3D print (STL):</strong> Open any creation in your Gallery and tap <em>3D</em>. Pick Small (100&nbsp;mm), Medium (160&nbsp;mm) or Large (220&nbsp;mm) and Shallow or Deep relief, then send the STL straight to your printer's slicing app.</li>
+        <li><strong>Built to print cleanly:</strong> Every pin becomes a solid six-sided column packed edge-to-edge on a flat 2&nbsp;mm base plate, so the front of your sculpture prints as one crisp, sturdy piece.</li>
+        <li><strong>Full-color QR sharing:</strong> Creations with thousands of captured colors travel offline too — they automatically loop across a sequence of QR codes that the other device gathers in any order.</li>
+      </ul>
+    </div>
+    <figure>
+      <button type="button" class="shot-btn" aria-label="Zoom in: A bald eagle, captured in color">
+        <img class="shot" src="media/shot-color.jpg" width="720" height="960" loading="lazy" alt="A bald eagle captured in real color on 3D pins: white head feathers, golden beak, dark eye, and brown wings standing out against custom sky-blue pins inside the clear acrylic box">
+        <span class="shot-cap">A bald eagle, captured in color</span>
+      </button>
+      <button type="button" class="shot-btn" aria-label="Zoom in: The same eagle, exported as an STL to 3D print">
+        <img class="shot" src="media/shot-print.jpg" width="720" height="960" loading="lazy" alt="The same bald eagle creation exported as a 3D-printable STL file: packed six-sided hexagonal columns on a flat base plate resting on a 3D printer build plate">
+        <span class="shot-cap">The same eagle, ready to 3D print (STL)</span>
+      </button>
+    </figure>
+  </div>
+
+  <div class="feature" id="camera">
     <div>
       <p class="kicker">Live depth camera</p>
       <h2>Things a flat drawing can't do.</h2>
-      <p>Hold a real object, a hand, or your face up to the camera and watch the pins rise in real time. Move closer and the shape pushes further in. Then spin the board side-on to inspect its full 3D profile.</p>
+      <p>Hold a toy, a hand, or your face up to the camera and watch the pins rise in real time. Move closer and the shape pushes further in. Then spin the board side-on to see its full 3D profile.</p>
       <ul>
-        <li><strong>Back &amp; front cameras:</strong> Scan a mug, a toy, or a portrait — even on a Mac with its built-in webcam.</li>
-        <li><strong>Press in:</strong> Hold still and tap Press in to capture a clean multi-frame relief lifted smoothly from the background.</li>
-        <li><strong>Works on every device:</strong> Uses LiDAR, dual cameras, or TrueDepth where available, and an on-device depth model everywhere else.</li>
-        <li><strong>Tumble &amp; gravity:</strong> Orbit any way round and pinch to zoom. Tip it glass-up — or shake — and every pin slides home.</li>
+        <li><strong>Clean camera controls:</strong> While a camera is on, everything else tucks away — just <em>Cancel</em>, <em>Keep</em>, <em>Press in</em>, and <em>In color</em>.</li>
+        <li><strong>Works on every device:</strong> Uses LiDAR, dual cameras, or TrueDepth where available, and an on-device Core ML depth model everywhere else — including a Mac's built-in camera.</li>
+        <li><strong>Tumble &amp; real gravity:</strong> Orbit any way around and pinch to zoom. Tip it glass-up — or shake — and every pin slides home.</li>
       </ul>
     </div>
     <figure>
@@ -249,18 +285,18 @@
     </figure>
   </div>
 
-  <div class="feature" id="finishes">
+  <div class="feature flip" id="finishes">
     <div>
       <p class="kicker">Finishes &amp; scenes</p>
-      <h2>Pick the pins and what sits behind them.</h2>
-      <p>Switch between classic brushed metals, bold plastic colours, or patterns across the whole pin bed — then pair them with a plain studio, six moving scenes (aurora, starry night, lava lamp, sunset, under the sea, disco), or a photo of your own.</p>
+      <h2>Any pin color — and 15 moving scenes behind them.</h2>
+      <p>Switch between classic brushed metals, ten plastic colors, rainbow patterns, or pick <strong>any custom color</strong> in shiny metal or matte plastic. Then choose what sits behind the board: a plain studio, 14 animated shader scenes (aurora, starry night, lava lamp, sunset, under the sea, disco, rainbow, clouds, snowfall, confetti, retro grid, galaxy, hearts, polka dots), or a photo of your own.</p>
       <ul class="finishes" aria-label="Try a finish on the mini pinboard">
         <li><button type="button" data-pin-finish="silver" data-jump-toy="true"><i style="background:#c9ccd3"></i>Silver</button></li>
         <li><button type="button" data-pin-finish="gold" data-jump-toy="true"><i style="background:#e3c57a"></i>Gold</button></li>
         <li><button type="button" data-pin-finish="rosegold" data-jump-toy="true"><i style="background:#e6a999"></i>Rose gold</button></li>
         <li><button type="button" data-pin-finish="copper" data-jump-toy="true"><i style="background:#c67c4e"></i>Copper</button></li>
         <li><button type="button" data-pin-finish="graphite" data-jump-toy="true"><i style="background:#4a4d57"></i>Graphite</button></li>
-        <li><button type="button" data-pin-finish="plastic" data-jump-toy="true"><i style="background:#3d8bff"></i>Ten plastic colours</button></li>
+        <li><button type="button" data-pin-finish="plastic" data-jump-toy="true"><i style="background:#3d8bff"></i>Any metal or plastic color</button></li>
         <li><button type="button" data-pin-finish="rainbow" data-jump-toy="true"><i style="background:conic-gradient(#f44,#fc3,#4d6,#3cf,#a5f,#f44)"></i>Rainbow, rings, stripes &amp; confetti</button></li>
       </ul>
       <p class="finishes-hint">Tap any finish above to try it on the mini pinboard.</p>
@@ -278,40 +314,40 @@
   </div>
 
   <section class="details" id="keep">
-    <h2>Keep it, share it, play anywhere</h2>
+    <h2>Keep it, share it, print it</h2>
     <p>Built as a quiet, tactile creative toy for desks, couches, and flights — equally satisfying for grown-ups and kids.</p>
     <div class="cards">
       <div class="card">
         <h3><span class="card-dot" style="background:#e3c57a"></span>Save every pin</h3>
-        <p>The shutter button stores where every single pin sits along with its paint, finish, and a three-quarter snapshot. Reopen any creation from the Gallery to carry on sculpting later.</p>
+        <p>The shutter button stores where every single pin sits along with its paint, custom finish, and a three-quarter snapshot. Reopen any creation from the Gallery to keep sculpting later.</p>
       </div>
       <div class="card">
-        <h3><span class="card-dot" style="background:#2ea59a"></span>Share by QR code</h3>
-        <p>Turn a creation into a QR code right on screen. The whole 3D sculpture lives inside the code itself — another iPhone, iPad, or Mac just scans it with no internet and no account.</p>
+        <h3><span class="card-dot" style="background:#2ea59a"></span>Share offline by QR code</h3>
+        <p>Turn a creation into a QR code right on screen — or an automatic sequence of codes for full-color camera imprints. Another device scans it with no internet, no account, and nothing lost.</p>
       </div>
       <div class="card">
-        <h3><span class="card-dot" style="background:#c67c4e"></span>Real gravity &amp; sound</h3>
-        <p>Subtle pin sounds and haptic taps respond as you sculpt. Keep turning locked to left-and-right so nothing spills by accident, or unlock all axes and tip the board glass-up to clear.</p>
+        <h3><span class="card-dot" style="background:#c67c4e"></span>STL files for 3D printing</h3>
+        <p>Pick a size and relief depth in the Gallery and export a binary STL with every pin turned into a six-sided column on a flat base plate. Opens in any printer's slicing app.</p>
       </div>
       <div class="card">
-        <h3><span class="card-dot" style="background:#5b8ff9"></span>Native on Mac too</h3>
-        <p>Resize the window to any proportion, click and drag to press, scroll to orbit, and use keyboard shortcuts (⌘S, ⌘G, ⌘R, ⌘F, ⌘Z). Works with the Mac's built-in camera too.</p>
+        <h3><span class="card-dot" style="background:#5b8ff9"></span>Mac, iPhone, iPad — &amp; Android soon</h3>
+        <p>Resize the Mac window to any shape, press with mouse or trackpad, use shortcuts (⌘S, ⌘G, ⌘R, ⌘F, ⌘Z), and use the built-in webcam. An Android version is on the way too.</p>
       </div>
       <div class="card">
         <h3><span class="card-dot" style="background:#9b6ef3"></span>Private by design</h3>
-        <p>Camera depth runs entirely in memory on your device and frames are immediately dropped. No ads, no accounts, no analytics, no tracking. <a href="privacy.html">Privacy policy</a></p>
+        <p>Camera depth and color capture run purely in memory on your device and camera frames are immediately dropped. No ads, no accounts, no analytics, no tracking. <a href="privacy.html">Privacy policy</a></p>
       </div>
       <div class="card">
         <h3><span class="card-dot" style="background:#e46d6d"></span>All ages, zero clutter</h3>
-        <p>Every tool is plainly labelled and Hide tucks the toolbar away with a single tap, leaving just you and the pins. Relaxing fidget desk toy for adults, instant magic for kids.</p>
+        <p>Every tool is plainly labeled and Hide tucks the toolbar away with a single tap, leaving just you and the pins — with subtle synthesized pin sounds and haptic taps.</p>
       </div>
     </div>
   </section>
 
   <section class="closing" id="deal">
-    <h2>Free to play. One purchase for the full set.</h2>
-    <p>The pins, the magnet, both cameras and Press in are all free, with a starter box of stamps, colours, pins, backgrounds and three saves.</p>
-    <p>One purchase opens the rest: every stamp, colour, pin finish and background, a photo of your own behind the pins, unlimited saves and sharing by code. Yours for keeps, shared with your family through Family Sharing. No subscriptions, no ads.</p>
+    <h2>Free to try. 99¢ once for the whole app.</h2>
+    <p>The pins, the magnet, both cameras, and Press in are all free, with a starter box of stamps, paint colors, pin finishes, backgrounds, and three saves. Scanning someone else's QR code is always free.</p>
+    <p>One 99¢ ($0.99) purchase opens the rest: all 39 stamps, 26 paint colors plus the custom color picker, custom metal and plastic pin colors, all 15 scenes and photo backgrounds, capturing camera shapes in color, unlimited saves, sharing by code, and STL files for 3D printing. Yours for keeps, shared with your family through Family Sharing. No subscriptions, no ads.</p>
     <div class="cta">
       <span class="badge" aria-label="Coming soon to the App Store for iPhone and iPad">
         <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
@@ -320,6 +356,10 @@
       <span class="badge" aria-label="Coming soon to the Mac App Store">
         <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
         <span><small>Coming soon to the</small>Mac App Store</span>
+      </span>
+      <span class="badge" aria-label="Coming soon to Google Play for Android">
+        <svg width="20" height="22" viewBox="0 0 20 22" aria-hidden="true"><path fill="#34a853" d="M1 .6 11.3 11 1 21.4c-.4-.2-.6-.6-.6-1.1V1.7C.4 1.2.6.8 1 .6z"/><path fill="#fbbc04" d="m14.7 7.6 3.6 2.1c1 .6 1 2 0 2.6l-3.6 2.1-3.4-3.4z"/><path fill="#4285f4" d="M11.3 11 14.7 14.4 2.5 21.4c-.5.3-1 .3-1.5 0z"/><path fill="#ea4335" d="M1 .6c.5-.3 1-.3 1.5 0l12.2 7-3.4 3.4z"/></svg>
+        <span><small>Coming soon to</small>Google Play</span>
       </span>
     </div>
     <p class="meta">Made in Seattle by <a href="https://timothycrosley.com">Timothy&nbsp;Crosley</a>. More apps, for kids and grown-ups, at <a href="https://pnw.kids">pnw.kids</a>. Questions? <a href="support.html">Visit support</a> or email <a href="mailto:bugjugapp@gmail.com">bugjugapp@gmail.com</a>.</p>

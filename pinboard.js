@@ -94,6 +94,11 @@
         return CONFETTI_PALETTE[k];
       },
     },
+    custom: {
+      name: 'Custom',
+      metallic: false,
+      rgb: () => state.customFinishRgb,
+    },
   };
 
   const BACKDROPS = {
@@ -113,6 +118,7 @@
     purple:  [164, 96, 245],
     pink:    [245, 98, 174],
     rainbow: 'rainbow',
+    custom:  'custom',
   };
 
   const state = {
@@ -121,6 +127,8 @@
     finish: 'gold',
     backdrop: 'studio',
     paintKey: 'rainbow',
+    customFinishRgb: [51, 191, 229],
+    customPaintRgb: [46, 204, 176],
     tilt: 0.52,
     sound: false,
     mode: 'idle',
@@ -479,7 +487,7 @@
           const colSpec = PAINT_COLORS[state.paintKey];
           const rgb = colSpec === 'rainbow'
             ? hslToRgb((state.rainbowPhase + c * 7 + r * 5) % 360, 0.88, 0.58)
-            : colSpec;
+            : (colSpec === 'custom' ? state.customPaintRgb : colSpec);
           if (norm < 0.85) {
             paints[idx] = rgb;
             const minRise = 0.55 * falloff;
@@ -815,7 +823,7 @@
     if (paintRow) paintRow.classList.toggle('is-open', tool === 'paint');
     const labels = {
       press: 'Press & hold to push pins deeper',
-      paint: 'Paint pins with bright colours',
+      paint: 'Paint pins with bright colors',
       erase: 'Drag to push pins back flat',
     };
     updateStatus(labels[tool] || '');
@@ -834,6 +842,12 @@
     });
   });
 
+  function hexToRgb(hex) {
+    const v = parseInt(hex.replace('#', ''), 16);
+    if (Number.isNaN(v)) return [51, 191, 229];
+    return [(v >> 16) & 255, (v >> 8) & 255, v & 255];
+  }
+
   const paintSwatches = document.querySelectorAll('[data-paint-color]');
   paintSwatches.forEach((b) => {
     b.addEventListener('click', () => {
@@ -842,6 +856,21 @@
       setTool('paint');
     });
   });
+
+  const customPaintInput = document.getElementById('custom-paint-input');
+  const customPaintWrap = customPaintInput?.closest('.swatch-custom');
+  if (customPaintInput && customPaintWrap) {
+    const syncCustomPaint = () => {
+      state.customPaintRgb = hexToRgb(customPaintInput.value);
+      state.paintKey = 'custom';
+      customPaintWrap.style.background = customPaintInput.value;
+      paintSwatches.forEach((x) => x.classList.toggle('is-active', x === customPaintWrap));
+      setTool('paint');
+      updateStatus(`Paint: custom (${customPaintInput.value.toUpperCase()})`);
+    };
+    customPaintInput.addEventListener('input', syncCustomPaint);
+    customPaintInput.addEventListener('change', syncCustomPaint);
+  }
 
   const finishSwatches = document.querySelectorAll('[data-pin-finish]');
   function setFinish(key, scrollToToy = false) {
@@ -863,6 +892,19 @@
       setFinish(b.dataset.pinFinish, b.dataset.jumpToy === 'true');
     });
   });
+
+  const customFinishInput = document.getElementById('custom-finish-input');
+  const customFinishWrap = customFinishInput?.closest('.swatch-custom');
+  if (customFinishInput && customFinishWrap) {
+    const syncCustomFinish = () => {
+      state.customFinishRgb = hexToRgb(customFinishInput.value);
+      customFinishWrap.style.background = customFinishInput.value;
+      setFinish('custom', false);
+      updateStatus(`Finish: custom (${customFinishInput.value.toUpperCase()})`);
+    };
+    customFinishInput.addEventListener('input', syncCustomFinish);
+    customFinishInput.addEventListener('change', syncCustomFinish);
+  }
 
   const backdropSwatches = document.querySelectorAll('[data-pin-backdrop]');
   backdropSwatches.forEach((b) => {
