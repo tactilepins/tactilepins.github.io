@@ -3,136 +3,49 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tactile Pins: a pin art toy for iPhone and iPad</title>
-<meta name="description" content="A bed of thousands of sliding pins that keeps the shape of whatever is pressed into it. Press, stamp, paint and tumble a realistic 3D pin art toy on iPhone and iPad.">
+<title>Tactile Pins: a pin art toy for iPhone, iPad and Mac</title>
+<meta name="description" content="A bed of thousands of sliding pins that keeps the shape of whatever is pressed into it. Press, stamp, paint and tumble a realistic 3D pin art toy on iPhone, iPad and Mac. No ads, no accounts, no tracking.">
 <meta property="og:title" content="Tactile Pins">
-<meta property="og:description" content="A realistic 3D pin art toy for iPhone and iPad.">
+<meta property="og:description" content="A realistic 3D pin art toy for iPhone, iPad and Mac.">
+<meta property="og:url" content="https://tactilepins.github.io/">
 <meta property="og:image" content="https://tactilepins.github.io/media/icon-512.png">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0d0e12">
 <link rel="icon" type="image/png" href="media/icon-180.png">
 <link rel="apple-touch-icon" href="media/icon-180.png">
-<style>
-  :root {
-    --bg: #0d0e12;
-    --panel: #16181f;
-    --line: #262a35;
-    --text: #eef0f5;
-    --muted: #9ba1b0;
-    --gold: #e3c57a;
-    --accent: #7fd3c8;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  /* a field of pin heads behind everything */
-  body::before {
-    content: "";
-    position: fixed; inset: 0; z-index: -1;
-    background:
-      radial-gradient(circle at 50% -10%, rgba(127, 211, 200, .16), transparent 55%),
-      radial-gradient(circle, rgba(255, 255, 255, .07) 1.2px, transparent 1.6px) 0 0 / 18px 18px;
-    -webkit-mask-image: linear-gradient(#000, transparent 85%);
-            mask-image: linear-gradient(#000, transparent 85%);
-  }
-  a { color: var(--accent); }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
-
-  header.top { display: flex; align-items: center; gap: 12px; padding: 22px 0; }
-  header.top img { width: 44px; height: 44px; border-radius: 10px; }
-  header.top strong { font-size: 18px; letter-spacing: .01em; }
-
-  .hero {
-    display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px;
-    align-items: center; padding: 36px 0 72px;
-  }
-  h1 {
-    font-size: clamp(40px, 6.4vw, 68px); line-height: 1.04; letter-spacing: -.025em;
-    margin: 0 0 20px; text-wrap: balance;
-  }
-  h1 em { font-style: normal; color: var(--gold); }
-  .lede { font-size: clamp(18px, 2vw, 21px); color: var(--muted); max-width: 30em; margin: 0 0 28px; }
-  .badges { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
-  .badges li {
-    border: 1px solid var(--line); background: var(--panel);
-    border-radius: 999px; padding: 7px 14px; font-size: 14px; color: var(--muted);
-  }
-
-  .phone {
-    justify-self: center; width: min(460px, 100%); margin: 0 auto;
-    border-radius: 30px; padding: 12px;
-    background: linear-gradient(160deg, #3a3d47, #15161b 40%, #2b2d35);
-    box-shadow: 0 40px 90px rgba(0, 0, 0, .6), 0 0 0 1px #000;
-  }
-  .phone video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; border-radius: 19px; background: #000; }
-  .caption {
-    text-align: center; min-height: 3.2em; margin: 18px auto 0; max-width: 440px;
-    color: var(--muted); font-size: 16px;
-  }
-  .caption b { color: var(--text); font-weight: 600; }
-  .note { text-align: center; color: var(--muted); font-size: 14px; margin: 16px auto 0; max-width: 440px; }
-
-  section { padding: 64px 0; border-top: 1px solid var(--line); }
-  h2 { font-size: clamp(28px, 3.6vw, 38px); letter-spacing: -.02em; line-height: 1.15; margin: 0 0 12px; }
-  .sub { color: var(--muted); max-width: 38em; margin: 0 0 36px; }
-
-  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
-  .card h3 { margin: 0 0 6px; font-size: 18px; }
-  .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
-  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px;
-         background: radial-gradient(circle at 35% 30%, #fff, var(--gold) 55%, #6b5a2c); }
-
-  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .shots figure { margin: 0; }
-  .shots img { display: block; width: 100%; height: auto; border-radius: 22px; border: 1px solid var(--line); }
-  .shots figcaption { color: var(--muted); font-size: 14.5px; text-align: center; margin-top: 10px; }
-
-  .finishes { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
-  .finishes li { display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--muted);
-                 border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px 6px 8px; background: var(--panel); }
-  .finishes i { width: 20px; height: 20px; border-radius: 50%; box-shadow: inset 0 -3px 5px rgba(0,0,0,.35), inset 0 2px 3px rgba(255,255,255,.5); }
-
-  .private { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-  .private p { color: var(--muted); margin: 0 0 14px; }
-
-  footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); font-size: 14.5px;
-           display: flex; gap: 12px; align-items: center; }
-  footer img { width: 28px; height: 28px; border-radius: 7px; }
-
-  @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 12px; }
-    .features { grid-template-columns: 1fr 1fr; }
-    .private { grid-template-columns: 1fr; gap: 8px; }
-  }
-  @media (max-width: 540px) {
-    .features { grid-template-columns: 1fr; }
-    .shots { grid-template-columns: 1fr 1fr; gap: 12px; }
-    section { padding: 48px 0; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
 
   <header class="top">
-    <img src="media/icon-180.png" alt="">
-    <strong>Tactile Pins</strong>
+    <a class="brand" href="./"><img src="media/icon-180.png" alt=""><strong>Tactile Pins</strong></a>
+    <nav>
+      <a class="wide" href="#toy">The toy</a>
+      <a class="wide" href="#keep">Sharing</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
   </header>
 
   <main>
     <div class="hero">
       <div>
         <h1>Thousands of pins.<br><em>Press anything</em> into them.</h1>
-        <p class="lede">Tactile Pins is a pin art toy for iPhone and iPad: a bed of sliding pins that keeps the shape of whatever is pushed into it. A finger, a whole hand, a stamp, or a face or a real toy held up to the camera. Every pin stops at its own depth, so what you make is 3D.</p>
+        <p class="lede">Tactile Pins is a pin art toy for iPhone, iPad and Mac: a bed of sliding pins that keeps the shape of whatever is pushed into it. A finger, a whole hand, a stamp, or a face or a real toy held up to the camera. Every pin stops at its own depth, so what you make is 3D.</p>
+        <div class="cta">
+          <span class="store soon" aria-label="Coming soon to the App Store for iPhone and iPad">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
+            <span><small>Coming soon to the</small>App Store</span>
+          </span>
+          <span class="store soon" aria-label="Coming soon to the Mac App Store">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
+            <span><small>Coming soon to the</small>Mac App Store</span>
+          </span>
+          <p class="cta-note">For iPhone, iPad and Mac · Free, with one purchase for the full set</p>
+        </div>
         <ul class="badges">
-          <li>iPhone and iPad</li>
+          <li>iPhone, iPad and Mac</li>
           <li>Apple Pencil</li>
           <li>No account, no internet</li>
         </ul>
@@ -147,7 +60,7 @@
       </div>
     </div>
 
-    <section>
+    <section id="toy">
       <h2>A real toy, in 3D</h2>
       <p class="sub">The whole thing is modelled: the board, the corner posts, a slab of clear acrylic on the front, and every pin with its own weight and friction.</p>
       <div class="features">
@@ -182,7 +95,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="keep">
       <div class="private">
         <div>
           <h2>Keep it, or give it to someone</h2>
@@ -190,15 +103,30 @@
         <div>
           <p>Save where every pin is, with a photo, and carry on with it later from the gallery.</p>
           <p>To share one, turn it into a QR code. The creation itself is in the code (pins, paint and finish), so the other iPhone or iPad just scans it. No internet, no account.</p>
-          <p>The cameras measure depth on the device, with LiDAR or an on-device depth model. Nothing leaves it.</p>
+          <p>The cameras measure depth on the device, with LiDAR or an on-device depth model. Nothing leaves it. No ads, no accounts, no tracking. <a href="privacy.html">Privacy policy</a></p>
         </div>
       </div>
+    </section>
+
+    <section class="closing">
+      <h2>Free to play. One purchase for the full set.</h2>
+      <p>The pins, the magnet, both cameras and Press in are all free, with a starter box of stamps, colours, pins and backgrounds. One purchase opens the rest: every stamp, colour, pin finish and background, a photo of your own behind the pins, unlimited saves and sharing by code. It is yours for keeps, shared with your family through Family Sharing. No subscriptions, no ads.</p>
+      <p>Coming soon to the App Store for iPhone and iPad, and to the Mac App Store.</p>
+      <p class="maker">Made in Seattle by <a href="https://timothycrosley.com">Timothy Crosley</a>. More apps, for kids and grown-ups, at <a href="https://pnw.kids">pnw.kids</a>.</p>
+      <p class="maker">Questions? <a href="support.html">Visit support</a> or email <a href="mailto:bugjugapp@gmail.com">bugjugapp@gmail.com</a>.</p>
     </section>
   </main>
 
   <footer>
-    <img src="media/icon-180.png" alt="">
-    <span>Tactile Pins, a pin art toy for iPhone and iPad.</span>
+    <span class="who"><img src="media/icon-180.png" alt="">© 2026 Tactile Pins</span>
+    <nav>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="support.html#terms">Terms</a>
+      <a href="mailto:bugjugapp@gmail.com">bugjugapp@gmail.com</a>
+      <a href="https://pnw.kids">pnw.kids</a>
+      <a href="https://timothycrosley.com">timothycrosley.com</a>
+    </nav>
   </footer>
 </div>
 
