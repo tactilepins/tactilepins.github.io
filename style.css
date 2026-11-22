@@ -103,10 +103,8 @@ h2 { font-size: clamp(28px, 3.6vw, 38px); letter-spacing: -.02em; line-height: 1
 .private { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 .private p { color: var(--muted); margin: 0 0 14px; }
 
-.closing { text-align: center; }
-.closing h2 { margin-bottom: 14px; }
-.closing p { color: var(--muted); max-width: 36em; margin: 0 auto 12px; }
-.maker { color: var(--muted); font-size: 15px; }
+.closing .cta { margin: 22px 0 0; }
+.maker { color: var(--muted); font-size: 15px; margin: 44px 0 0; padding-top: 24px; border-top: 1px solid var(--line); }
 
 footer { border-top: 1px solid var(--line); padding: 28px 0 44px; color: var(--muted); font-size: 14.5px;
          display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; justify-content: space-between; }
